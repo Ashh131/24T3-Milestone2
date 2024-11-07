@@ -34,7 +34,7 @@ public class Targeting : MonoBehaviour
     {
         int targetCount = targets.Length;
 
-        for (int i = 0; i < targetCount; i++)
+        for (int i = 0; i < targetCount;)
         {
             currentTargetIndex = (currentTargetIndex + i) % targetCount;
             Target target = targets[currentTargetIndex];
