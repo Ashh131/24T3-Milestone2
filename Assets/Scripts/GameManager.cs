@@ -19,18 +19,18 @@ public class GameManager : MonoBehaviour
             hpValues[i] = targets[i].GetHealthPoints();
         }
 
-        BubbleSortArray(hpValues);
+        BubbleSortArray(targets);
     }
-    void BubbleSortArray(int[] array)
+    void BubbleSortArray(Target[] array)
     {
         int n = array.Length;
         for (int i = 0; i < n - i; i++)
         {
             for (int j = 0; j < n - i - 1; i++)
             {
-                if (array[j] > array[j + 1])
+                if (array[j]. GetHealthPoints() > array[j + 1]. GetHealthPoints())
                 {
-                    int temp = array[j];
+                    Target temp = array[j];
                     array[j] = array[j + 1];
                     array[j + 1] = temp;
 
