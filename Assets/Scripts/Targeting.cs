@@ -8,7 +8,7 @@ public class Targeting : MonoBehaviour
     private Target[] targets;
     private int currentTargetIndex = 0;
     [SerializeField] private Camera playerCamera;
-    [SerializeField] private LayerMask obsticleLayer;
+    [SerializeField] private LayerMask obstacleLayer;
    
    
 
@@ -34,13 +34,18 @@ public class Targeting : MonoBehaviour
     {
         int targetCount = targets.Length;
 
-        for (int i = 0; i < targetCount;)
-        {
-            currentTargetIndex = (currentTargetIndex + i) % targetCount;
-            Target target = targets[currentTargetIndex];
-            playerCamera.transform.LookAt(target.transform);
-        }
+        currentTargetIndex = (currentTargetIndex + 1) % targetCount;
+        Target target = targets[currentTargetIndex];
+        playerCamera.transform.LookAt(target.transform);
+
+
+
+
+
     }
+
+
 }
+
 
 
