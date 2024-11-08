@@ -7,11 +7,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private Target[] targets;
+    public Target[] targets;
     private int[] hpValues;
 
     private void Start()
     {
+       
         targets = FindObjectsOfType<Target>();
         hpValues = new int[targets.Length];
         for (int i = 0; i < targets.Length; i++)
@@ -19,9 +20,9 @@ public class GameManager : MonoBehaviour
             hpValues[i] = targets[i].GetHealthPoints();
         }
 
-        BubbleSortArray(targets);
+        targets = BubbleSortArray(targets);
     }
-    void BubbleSortArray(Target[] array)
+    Target[] BubbleSortArray(Target[] array)
     {
         int n = array.Length;
         for (int i = 0; i < n - i; i++)
@@ -33,16 +34,16 @@ public class GameManager : MonoBehaviour
                     Target temp = array[j];
                     array[j] = array[j + 1];
                     array[j + 1] = temp;
-
+                    
                 }
             }
         }
+        return array;
     }
 
     public int[] GetSortHPValues()
     {
         return hpValues;
     }
-
-}
-
+    
+} 
